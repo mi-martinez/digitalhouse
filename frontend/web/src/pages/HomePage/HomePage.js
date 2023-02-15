@@ -13,8 +13,6 @@ const HomePage = () => {
     <>
       <MetaTags title="🏠 Digital House" description="Entrega Grupo 6 Digital 🏠 2023" />
 
-
-      <Header />
         <SearchComponent />
         <CategoriesSwipe />
         <Recomendations />

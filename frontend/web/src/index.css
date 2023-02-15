@@ -8,3 +8,13 @@ body {
   padding: 0;
   background-color: #f9f6f178;
 }
+
+.MuiButtonBase-root {
+  text-transform: none !important;
+    box-shadow: none !important;  
+}
+
+
+.MuiButton-contained {
+  color: white !important;
+}
