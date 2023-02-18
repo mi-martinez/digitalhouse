@@ -1,8 +1,8 @@
-import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
-import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
-
 import CssBaseline from '@mui/material/CssBaseline'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
+
+import { FatalErrorBoundary, RedwoodProvider } from '@redwoodjs/web'
+import { RedwoodApolloProvider } from '@redwoodjs/web/apollo'
 
 import FatalErrorPage from 'src/pages/FatalErrorPage'
 import Routes from 'src/Routes'
@@ -20,19 +20,22 @@ const themeDH = createTheme({
     error: {
       main: '#ff1744',
     },
+    black: {
+      main: '#000000',
+    },
   },
 })
 
 const App = () => (
   <ThemeProvider theme={themeDH}>
-  <CssBaseline />
-  <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
-      <RedwoodApolloProvider>
-        <Routes />
-      </RedwoodApolloProvider>
-    </RedwoodProvider>
-  </FatalErrorBoundary>
+    <CssBaseline />
+    <FatalErrorBoundary page={FatalErrorPage}>
+      <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
+        <RedwoodApolloProvider>
+          <Routes />
+        </RedwoodApolloProvider>
+      </RedwoodProvider>
+    </FatalErrorBoundary>
   </ThemeProvider>
 )
 
