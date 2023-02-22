@@ -1,0 +1,58 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+BackEnd/.apt_generated
+BackEnd/.classpath
+BackEnd/.factorypath
+BackEnd/.project
+BackEnd/.settings
+BackEnd/.springBeans
+BackEnd/.sts4-cache
+
+### IntelliJ IDEA ###
+BackEnd/.idea
+BackEnd/*.iws
+BackEnd/*.iml
+BackEnd/*.ipr
+
+### NetBeans ###
+BackEnd/nbproject/private/
+BackEnd/nbbuild/
+BackEnd/dist/
+BackEnd/nbdist/
+BackEnd/.nb-gradle/
+BackEnd/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+**/.vscode/
+
+
+### fe
+
+Frontend/.idea
+Frontend/.DS_Store
+Frontend/.env
+Frontend/.netlify
+Frontend/.redwood
+Frontend/dev.db*
+Frontend/dist
+Frontend/dist-babel
+Frontend/node_modules
+Frontend/yarn-error.log
+Frontend/web/public/mockServiceWorker.js
+Frontend/web/types/graphql.d.ts
+Frontend/api/types/graphql.d.ts
+Frontend/api/src/lib/generateGraphiQLHeader.*
+Frontend/.pnp.*
+Frontend/.yarn/*
+Frontend/!.yarn/patches
+Frontend/!.yarn/plugins
+Frontend/!.yarn/releases
+Frontend/!.yarn/sdks
+Frontend/!.yarn/versions
