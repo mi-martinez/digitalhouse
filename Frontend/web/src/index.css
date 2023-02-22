@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+body, * {
+  font-family: 'Quicksand', sans-serif !important;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f9f6f178;
+}
+
+p{
+  font-weight: 400;
+font-size: 14px;
+line-height: 18px;
+color: #383B58;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+  color: #383B58;
+}
+
+h1{
+font-size: 24px;
+line-height: 30px;
+color: #000000;
+}
+
+h2{
+font-size: 20px;
+line-height: 25px;
+color: #000000;
+}
+
+h3{
+font-size: 16px;
+line-height: 20px;
+color: #000000;
+}
+
+h4{
+font-size: 14px;
+line-height: 18px;
+}
+
+.MuiButtonBase-root {
+  text-transform: none !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    height: 40px !important;
+}
+
+
+.MuiButton-contained {
+  color: white !important;
+}
