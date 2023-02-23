@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.grupo6.apigestionreservas.dto.CategoriaDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.repository.CategoriaRepository;
+import com.grupo6.apigestionreservas.util.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,11 +30,12 @@ public class CategoriaService {
     }
 
     public void update(Integer id, CategoriaDTO categoriaDTO) {
-        //TODO Implementar el método update del servicio categoria
-//        Categoria categoria = categoriaRepository.findById(id).orElse();
+        categoriaRepository.findById(id).orElseThrow(() -> new NotFoundException("Categoría no encontrada"));
+        categoriaRepository.save(mapper.convertValue(categoriaDTO, Categoria.class));
     }
 
     public void delete(Integer id) {
+        categoriaRepository.findById(id).orElseThrow(() -> new NotFoundException("Categoría no encontrada"));
         categoriaRepository.deleteById(id);
     }
 

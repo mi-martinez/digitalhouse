@@ -27,4 +27,14 @@ public class CategoriaController {
         return categoriaService.create(categoriaDTO);
     }
 
+    @PutMapping("/{id}")
+    public void updateCategoria(@PathVariable Integer id, @RequestBody @Valid CategoriaDTO categoriaDTO) {
+        categoriaService.update(id, categoriaDTO);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteCategoria(@PathVariable Integer id) {
+        categoriaService.delete(id);
+    }
 }
