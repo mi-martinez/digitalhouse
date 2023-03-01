@@ -8,8 +8,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import java.util.Set;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,22 +15,25 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Ciudad {
+public class Politica {
 
     @Id
     @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String nombre;
+    @Column(nullable = false, length = 50)
+    private String titulo;
 
-    @OneToMany(mappedBy = "ciudad")
-    private Set<Producto> productos;
+    @Column(nullable = false)
+    private String descripcion;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pais_id", nullable = false)
-    private Pais pais;
+    @JoinColumn(name = "producto_id", nullable = false)
+    private Producto producto;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tipo_politica_id", nullable = false)
+    private TipoPolitica tipoPolitica;
 
 }
-

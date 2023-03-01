@@ -30,6 +30,13 @@ public class Producto {
     @Column(nullable = false, length = 50)
     private String titulo;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "descripcion_id", nullable = false, unique = true)
+    private DescripcionProducto descripcion;
+
+    @OneToMany(mappedBy = "producto")
+    private Set<Politica> politicas;
+
     @Column
     private Double latitud;
 
