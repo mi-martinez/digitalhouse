@@ -1,32 +1,31 @@
 package com.grupo6.apigestionreservas.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import java.util.Set;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Set;
 
 @Entity
 @Getter
 @Setter
-@NoArgsConstructor
-public class Categoria {
+public class Caracteristica {
+
     @Id
     @Column(nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(nullable = false, length = 50)
-    private String titulo;
-
-    @Column
     private String descripcion;
 
-    @Column(nullable = false)
-    private String urlImagen;
-
-    @OneToMany(mappedBy = "categoria")
+    @ManyToMany(mappedBy = "caracteristicas")
     private Set<Producto> productos;
+
 }
 
