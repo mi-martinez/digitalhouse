@@ -11,4 +11,4 @@ bck_build:
     - echo "List project backend"
     - ls
   only:
-    - CI/testBackend
+    - backend
