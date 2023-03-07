@@ -7,4 +7,4 @@ bck_build:
   script:
     - echo "Hello, $GITLAB_USER_LOGIN!"
   only:
-    -CI/testBackend
+    - CI/testBackend
