@@ -1,7 +1,6 @@
 stages:
   - build
 
-
 bck_build:
   stage: build
   script:
