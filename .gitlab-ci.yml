@@ -16,7 +16,7 @@ bck_build:
       paths:
           - BackEnd/target/gestionreservasapp.jar
     only:
-       - CI/Execution
+       - backend
 
 bck_deploy:
     stage: deploy
@@ -45,7 +45,7 @@ bck_deploy:
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl status gestionreservasapp.service"
         - echo "Finished deploying the app."
     only:
-        - CI/Execution
+        - backend
 
 
 
