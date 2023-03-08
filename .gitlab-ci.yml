@@ -38,7 +38,6 @@ bck_deploy:
         - ssh ubuntu@$DEPLOY_SERVER_IP "pwd"
         - ssh ubuntu@$DEPLOY_SERVER_IP "ls -ld *"
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop gestionreservasapp.service"
-        - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl status gestionreservasapp.service"
         - scp BackEnd/target/gestionreservasapp.jar ubuntu@$DEPLOY_SERVER_IP:~/gestion-reservas
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl daemon-reload"
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start gestionreservasapp.service"
