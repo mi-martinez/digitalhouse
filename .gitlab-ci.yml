@@ -33,12 +33,7 @@ bck_deploy:
     script:
         - echo "Deploying started..."
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl stop gestionreservasapp.service"
-        - ls
-        - rm -r gestion-reservas
-        - echo "Creando carpeta...."
-        - mkdir gestion-reservas
-        - ls
-        - scp BackEnd/target/gestionreservasapp.jar ubuntu@$DEPLOY_SERVER_IP:~/home/ubuntu/gestion-reservas/
+        - scp BackEnd/target/gestionreservasapp.jar ubuntu@$DEPLOY_SERVER_IP:./gestion-reservas
         - ssh ubuntu@$DEPLOY_SERVER_IP "sudo systemctl start gestionreservasapp.service"
         - echo "Finished deploying the app."
     only:
