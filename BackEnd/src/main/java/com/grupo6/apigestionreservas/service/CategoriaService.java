@@ -1,6 +1,7 @@
 package com.grupo6.apigestionreservas.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.grupo6.apigestionreservas.dto.CategoriaConCantidadProductosDTO;
 import com.grupo6.apigestionreservas.dto.CategoriaDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.repository.CategoriaRepository;
@@ -24,6 +25,14 @@ public class CategoriaService {
         List<CategoriaDTO> categoriaDTOS = new ArrayList<>();
         categorias.forEach(categoria -> categoriaDTOS.add(mapper.map(categoria, CategoriaDTO.class)));
         return categoriaDTOS;
+    }
+
+    public List<CategoriaConCantidadProductosDTO> findAllConCantProductos() {
+        List<Categoria> categorias = categoriaRepository.findAll();
+
+        List<CategoriaConCantidadProductosDTO> categoriaPlusDTOS = new ArrayList<>();
+        categorias.forEach(categoria -> categoriaPlusDTOS.add(mapper.map(categoria, CategoriaConCantidadProductosDTO.class)));
+        return categoriaPlusDTOS;
     }
 
     public Integer create(CategoriaDTO categoriaDTO) {
