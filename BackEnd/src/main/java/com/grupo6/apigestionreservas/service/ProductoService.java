@@ -18,8 +18,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 @Service
@@ -86,6 +88,13 @@ public class ProductoService {
                 .collect(Collectors.toList());
 
         return productosDTO;
+    }
+
+    public List<ProductoDTO> listarProductosAleatorios() {
+        List<ProductoDTO> productos = listarProductos();
+        Collections.shuffle(productos);
+        int cantidad = ThreadLocalRandom.current().nextInt(productos.size()) + 1;
+        return productos.subList(0, cantidad);
     }
 }
 

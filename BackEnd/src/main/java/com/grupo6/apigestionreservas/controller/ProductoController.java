@@ -11,7 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
 @RestController
@@ -55,6 +57,11 @@ public class ProductoController {
         return productos.stream()
                .map(producto -> modelMapper.map(producto, ProductoDTO.class))
                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/aleatorio")
+    public List<ProductoDTO> listarProductosAleatorios() {
+        return productoService.listarProductosAleatorios();
     }
 
 }
