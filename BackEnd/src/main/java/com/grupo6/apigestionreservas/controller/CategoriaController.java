@@ -1,5 +1,6 @@
 package com.grupo6.apigestionreservas.controller;
 
+import com.grupo6.apigestionreservas.dto.CategoriaConCantidadProductosDTO;
 import com.grupo6.apigestionreservas.dto.CategoriaDTO;
 import com.grupo6.apigestionreservas.model.Categoria;
 import com.grupo6.apigestionreservas.service.CategoriaService;
@@ -19,6 +20,11 @@ public class CategoriaController {
     @GetMapping
     public List<CategoriaDTO> getAllCategorias() {
         return categoriaService.findAll();
+    }
+
+    @GetMapping("/con-cantidad-productos")
+    public List<CategoriaConCantidadProductosDTO> getAllCategoriasConCantidadProductos() {
+        return categoriaService.findAllConCantProductos();
     }
 
     @PostMapping
