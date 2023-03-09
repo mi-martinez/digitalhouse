@@ -1,5 +1,6 @@
 package com.grupo6.apigestionreservas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,7 @@ public class Categoria {
 
     @Column(nullable = false)
     private String urlImagen;
-
+    @JsonIgnore
     @OneToMany(mappedBy = "categoria")
     private Set<Producto> productos;
 }

@@ -1,5 +1,6 @@
 package com.grupo6.apigestionreservas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,6 +22,7 @@ public class DescripcionProducto {
 
     @Column(nullable = false, length = 100)
     private String titulo;
+
 
     @Column(nullable = false)
     private String descripcion;
