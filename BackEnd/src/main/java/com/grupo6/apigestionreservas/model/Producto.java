@@ -1,5 +1,6 @@
 package com.grupo6.apigestionreservas.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -30,7 +31,7 @@ public class Producto {
     @Column(nullable = false, length = 50)
     private String titulo;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "descripcion_id", nullable = false, unique = true)
     private DescripcionProducto descripcion;
 
@@ -43,11 +44,11 @@ public class Producto {
     @Column
     private Double longitud;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ciudad_id", nullable = false)
     private Ciudad ciudad;
 
